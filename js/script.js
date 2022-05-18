@@ -8,31 +8,22 @@ if (navigator.serviceWorker) {
   })
 }
 
-const randomNumber = Math.floor(Math.random() * 6) + 1
-
-/**
- * This function updates the slider value.
- */
-function updateSliderValue(valueFromSlider) {
-  document.getElementById("slider-value").innerHTML = valueFromSlider
-}
-
 /**
  * This function compares slider with random number.
  */
-function guessClicked() {
-  const sliderValue = slider.value
+
+function calculate() {
+
+  //input
+  const number = parseInt(document.getElementById('number').value)
 
   // process
-  if (sliderValue == randomNumber) {
-    document.getElementById("guess-result").innerHTML =
-      "Answer is " + randomNumber + "!" + " Congratulations!"
-    // console.log("Congratulations!")
+  if (number >= 0) {
+    document.getElementById("answer").innerHTML =
+      "The number " + number + " is a positive number."
   }
-  //  block of code to be executed if condition1 is true
-  if (sliderValue != randomNumber) {
-    document.getElementById("guess-result").innerHTML =
-      "Answer is " + randomNumber + "!" + " Try again!"
-    // console.log("Try again!")
+  else {
+    document.getElementById("answer").innerHTML =
+      "The number " + number + " is a negative number."
   }
 }
