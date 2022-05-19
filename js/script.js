@@ -11,7 +11,6 @@ if (navigator.serviceWorker) {
 /**
  * This function compares slider with random number.
  */
-
 function calculate() {
 
   //input
